@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Search</title>
+  </head>
+  <body>
+    <section>
+      <h3>Coincidencia de la busqueda {{ category }} {{ post.count }}</h3>
+      {% for item in post %}
+        <article class="">
+          <h1 ><a href="/blog/post/{{ item.slug }}">{{ item.title }}</a></h1>
+          <span>{{item.date_creation}}</span>
+          <a href="{{ item.img_header.url }}"><img src="{{ item.img_header.url }}" alt="" width="210px" height="141px" /></a>
+        </article>
+      {% endfor %}
+    </section>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Entrada al blog</title>
+	</head>
+	<body>
+		<h1>{{entry.title}}</h1>
+		<span>{{entry.date_creation}} by {{entry.user}}</span>
+		<center><img src="{{entry.img_header.url}}" alt="" /></center>
+		<div>
+			{{entry.description}}
+		</div>
+		<section class="tags">
+			{% for tag in entry.category.all %}
+			   <a href="/search/{{tag.slug}}">{{tag.description}}</a>
+			{% endfor %}
+		</section>
+	</body>
+</html>

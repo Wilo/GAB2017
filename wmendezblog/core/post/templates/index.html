@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>blog</title>
+  </head>
+  <body>
+    {% for item in object_list %}
+      <article class="">
+          <a href="{% url 'post' item.slug  %}"><h1 >{{ item.title }}</h1></a>
+        <span>{{ item.date_creation }}</span>
+        <a href="{{ item.img_header.url }}"><img src="{{ item.img_header.url }}" alt="" width="210px" height="141px" /></a>
+      </article>
+    {% endfor %}
+  </body>
+</html>
